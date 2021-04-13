@@ -1,0 +1,147 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Board.png" type="Texture" id=1]
+[ext_resource path="res://SpinGreen.png" type="Texture" id=2]
+[ext_resource path="res://CounterGreen.png" type="Texture" id=3]
+[ext_resource path="res://Main.gd" type="Script" id=4]
+[ext_resource path="res://SpinRed.png" type="Texture" id=5]
+[ext_resource path="res://SpinBlue.png" type="Texture" id=6]
+[ext_resource path="res://CounterRed.png" type="Texture" id=7]
+[ext_resource path="res://CounterBlue.png" type="Texture" id=8]
+[ext_resource path="res://CounterYellow.png" type="Texture" id=9]
+[ext_resource path="res://SpinYellow.png" type="Texture" id=10]
+[ext_resource path="res://ResetButton.png" type="Texture" id=11]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 93.9598, 763.109, 0, 0, 0, 0, 204.835, 761.611, 0, 0, 0, 0, 315.709, 760.113, 0, 0, 0, 0, 440.069, 757.116, 0, 0, 0, 0, 552.442, 758.614, 0, 0, 0, 0, 547.947, 611.78, 0, 0, 0, 0, 413.099, 613.278, 0, 0, 0, 0, 297.73, 616.275, 0, 0, 0, 0, 179.363, 614.777, 0, 0, 0, 0, 72.9836, 622.268, 0, 0, 0, 0, 71.4853, 481.427, 0, 0, 0, 0, 168.875, 469.441, 0, 0, 0, 0, 287.242, 473.936, 0, 0, 0, 0, 395.12, 472.437, 0, 0, 0, 0, 497.005, 473.936, 0, 0, 0, 0, 505.994, 315.115, 0, 0, 0, 0, 384.632, 319.61, 0, 0, 0, 0, 282.747, 327.102, 0, 0, 0, 0, 153.892, 325.603, 0, 0, 0, 0, 56.5023, 321.108, 0, 0, 0, 0, 55.004, 166.783, 0, 0, 0, 0, 170.374, 165.285, 0, 0, 0, 0, 281.248, 160.79, 0, 0, 0, 0, 392.123, 162.288, 0, 0, 0, 0, 508.991, 156.295 )
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Board" type="Sprite" parent="."]
+position = Vector2( 288, 448 )
+scale = Vector2( 1.33333, 2.05977 )
+texture = ExtResource( 1 )
+
+[node name="SpinbuttonGreen" type="TextureButton" parent="."]
+margin_top = 896.0
+margin_right = 144.0
+margin_bottom = 1024.0
+texture_normal = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpinbuttonRed" type="TextureButton" parent="."]
+margin_left = 144.0
+margin_top = 896.0
+margin_right = 288.0
+margin_bottom = 1024.0
+texture_normal = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpinbuttonBlue" type="TextureButton" parent="."]
+margin_left = 288.0
+margin_top = 896.0
+margin_right = 432.0
+margin_bottom = 1024.0
+texture_normal = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpinbuttonYellow" type="TextureButton" parent="."]
+margin_left = 432.0
+margin_top = 896.0
+margin_right = 576.0
+margin_bottom = 1024.0
+texture_normal = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerPath_1" type="Path2D" parent="."]
+position = Vector2( 0, -2.37842 )
+curve = SubResource( 1 )
+
+[node name="Path_1" type="PathFollow2D" parent="PlayerPath_1"]
+position = Vector2( 93.9598, 763.109 )
+rotation = 0.0185088
+rotate = false
+cubic_interp = false
+loop = false
+
+[node name="Player_1" type="Sprite" parent="PlayerPath_1/Path_1"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[node name="PlayerPath_2" type="Path2D" parent="."]
+position = Vector2( 0, -2.37842 )
+curve = SubResource( 1 )
+
+[node name="Path_2" type="PathFollow2D" parent="PlayerPath_2"]
+position = Vector2( 93.9598, 768.109 )
+rotation = 0.0185088
+v_offset = 5.0
+rotate = false
+cubic_interp = false
+loop = false
+
+[node name="Player_2" type="Sprite" parent="PlayerPath_2/Path_2"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+
+[node name="PlayerPath_3" type="Path2D" parent="."]
+position = Vector2( 0, -2.37842 )
+curve = SubResource( 1 )
+
+[node name="Path_3" type="PathFollow2D" parent="PlayerPath_3"]
+position = Vector2( 93.9598, 773.109 )
+rotation = 0.0185088
+v_offset = 10.0
+rotate = false
+cubic_interp = false
+loop = false
+
+[node name="Player_3" type="Sprite" parent="PlayerPath_3/Path_3"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+
+[node name="PlayerPath_4" type="Path2D" parent="."]
+position = Vector2( 0, -2.37842 )
+curve = SubResource( 1 )
+
+[node name="Path_4" type="PathFollow2D" parent="PlayerPath_4"]
+position = Vector2( 93.9598, 778.109 )
+rotation = 0.0185088
+v_offset = 15.0
+rotate = false
+cubic_interp = false
+loop = false
+
+[node name="Player_4" type="Sprite" parent="PlayerPath_4/Path_4"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+
+[node name="ResetButton" type="TextureButton" parent="."]
+margin_left = 520.0
+margin_right = 576.0
+margin_bottom = 56.0
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="SpinbuttonGreen" to="." method="_on_SpinbuttonGreen_pressed"]
+[connection signal="pressed" from="SpinbuttonRed" to="." method="_on_SpinbuttonRed_pressed"]
+[connection signal="pressed" from="SpinbuttonBlue" to="." method="_on_SpinbuttonBlue_pressed"]
+[connection signal="pressed" from="SpinbuttonYellow" to="." method="_on_SpinbuttonYellow_pressed"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]
